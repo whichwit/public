@@ -1,0 +1,7 @@
+field_name,data_type,not_null,unique,default,comment
+value_id,string,True,False,None,Unique identifier for the value set values
+valueset_name,string,True,False,None,Name of the value set
+code,string,True,False,None,Value set value code
+description,string,False,False,None,Value set value description
+parent_id,string,False,False,None,Parent value set/value reference
+extra,json,False,False,None,"Additional data not included in the model, in JSON format"

@@ -1,0 +1,104 @@
+field_name,data_type,not_null,unique,default,comment
+patient_id,string,True,False,None,""
+encounter_id,string,True,False,None,"This is the primary key of the table and serves as the identifier that links other clinical and administritive records together.
+
+- **Epic:** Contact Serial Number (CSN)
+- **Altera:** Visit ID"
+encounter_date,datetime,True,False,None,Date of encounter
+encounter_type,encounter_type,True,False,None,"- `inpatient`: A patient encounter where a patient is admitted by a hospital or equivalent facility, assigned to a location where patients generally stay at least overnight and provided with room, board, and continuous nursing service.
+- `ambulatory`: A comprehensive term for health care provided in a healthcare facility on a nonresident basis. The term ambulatory usually implies that the patient has come to the location and is not assigned to a bed. Sometimes referred to as an outpatient encounter.
+- `observation`: An encounter where the patient usually will start in different encounter, such as one in the emergency department (EMER) but then transition to this type of encounter because they require a significant period of treatment and monitoring to determine whether or not their condition warrants an inpatient admission or discharge. In the majority of cases the decision about admission or discharge will occur within a time period determined by local, regional or national regulation, often between 24 and 48 hours.
+- `emergency`: A patient encounter that takes place at a dedicated healthcare service delivery location where the patient receives immediate evaluation and treatment, provided until the patient can be discharged or responsibility for the patient's care is transferred elsewhere (for example, the patient could be admitted as an inpatient or transferred to another facility.)
+- `pre-admission`: A patient encounter where patient is scheduled or planned to receive service delivery in the future.
+- `virtual`: A patient encounter where the patient and the practitioner(s) are not in the same physical location. Examples include telephone conference, email exchange, robotic surgery, and televideo conference.
+- `home-health`: Healthcare encounter that takes place in the residence of the patient or a designee.
+- `short-stay`: An encounter where the patient is admitted to a health care facility for a predetermined length of time, usually less than 24 hours.
+- `field`: A patient encounter that takes place both outside a dedicated service delivery location and outside a patient's residence. Example locations might include an accident site and at a supermarket.
+
+[FHIR: Encounter class](http://terminology.hl7.org/ValueSet/encounter-class)
+[FHIR: Encounter Code](https://terminology.hl7.org/ValueSet-v3-ActEncounterCode.html)"
+encounter_subtype,encounter_subtype,False,False,None,"- `snf`: Skilled Nursing Facility
+- `hospice`: Hospice
+- `rehab`: Rehabilitation
+- `psych`: Psychiatric"
+account_id,string,True,False,(from encounter_id),"This field serves as a higher-level identifier that can be used to group multiple encounters for administrative or billing purposes.
+
+It establishes a one-to-many relationship with encounter_id, where each account_id can correspond to multiple encounter_id values. For instance, in Epic systems, this corresponds to the Hospital Account Number (HAR), and in Altera, it corresponds to the Series number, if applicable.
+
+- **Epic:** Hospital Account Number (HAR)
+- **Altera:** Series number, if applicable"
+account_type,account_type,False,False,hospital,"- `hospital`: Hospital billing
+- `professional`: Professional billing"
+admit_date,datetime,False,False,None,"Account start date/time, if an account is used to group related encounters."
+discharge_date,datetime,False,False,None,"Account end date/time, if an account is used to group related encounters."
+status,encounter_status,True,False,None,"- `planned`: Planned
+- `in-progress`: In Progress
+- `on-hold`: On Hold
+- `discharged`: Discharged
+- `completed`: Completed
+- `cancelled`: Cancelled
+- `discontinued`: Discontinued
+- `entered-in-error`: Entered in Error
+- `unknown`: Unknown
+
+[FHIR: Encounter status](http://hl7.org/fhir/ValueSet/encounter-status)"
+location_id,string,False,False,None,""
+discharge_provider_id,string,False,False,None,""
+billing_provider_id,string,False,False,None,""
+attending_provider_id,string,True,False,None,""
+drg,string,False,False,None,DRG code
+drg_type,drg_type,False,False,MS-DRG,""
+drg_status,drg_status,False,False,None,"- `interim`: Interim or concurrent
+- `final`: Final"
+mdc,string,False,False,None,Major Diagnostic Category
+visit_reason,string,False,False,None,Reason for visit as stated by the patient
+financial_class,user_defined,False,False,None,Financial class of the patient
+payor_name,user_defined,False,False,None,Name of primary insurance/payer e.g. `Medicare`
+plan_name,user_defined,False,False,None,Name of the insurance plan e.g. `Medicare Part A`
+admit_source,admit_source,False,False,None,"A set of codes that can be used to indicate from where the patient came in.
+
+- `hosp-trans`: Transferred from other hospital
+- `emd`: From accident/emergency department
+- `outp`: From outpatient department
+- `born`: Born in hospital
+- `gp`: General Practitioner referral
+- `mp`: Medical Practitioner/physician referral
+- `nursing`: From nursing home
+- `psych`: From psychiatric hospital
+- `rehab`: From rehabilitation facility
+- `other`: Other
+
+[FHIR: Admit source](http://terminology.hl7.org/ValueSet/encounter-admit-source)"
+service,string,False,False,None,Service or department where the encounter is registered to
+point_of_origin,string,False,False,None,Facility where the patient was located prior to admission
+admission_type,admission_type,False,False,None,"Specify the circumstances under which the patient was or will be admitted.
+
+- `A`: Accident
+- `E`: Emergency
+- `L`: Labor and Delivery
+- `R`: Routine
+- `N`: Newborn (Birth in healthcare facility)
+- `U`: Urgent
+- `C`: Elective
+
+[FHIR: Admission type](http://terminology.hl7.org/ValueSet/v2-0007)"
+discharge_disposition,discharge_disposition,False,False,None,"Specify where the patient left the hospital.
+
+- `home`: Home
+- `alt-home`: Alternative home
+- `other-hcf`: Other healthcare facility
+- `hosp`: Hospice
+- `long`: Long-term care
+- `aadvice`: Left against advice
+- `exp`: Expired
+- `psy`: Psychiatric hospital
+- `rehab`: Rehabilitation
+- `snf`: Skilled nursing facility
+- `oth`: Other
+
+[FHIR: Discharge disposition](http://terminology.hl7.org/ValueSet/encounter-discharge-disposition)"
+facility,user_defined,False,False,main,"In a multi-facility system, the facility or billing entity associated with the encounter. Can use `location_id` if facility is already defined as a location."
+extra,json,False,False,None,"Additional data not included in the model, in JSON format"
+created_at,datetime,False,False,None,Timestamp when the record was initially created in the database.
+updated_at,datetime,True,False,CURRENT_TIMESTAMP(),Timestamp of last update
+deleted_at,datetime,False,False,None,Timestamp of when the record is deleted or inactivated

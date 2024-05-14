@@ -1,0 +1,41 @@
+field_name,data_type,not_null,unique,default,comment
+patient_id,string,True,False,None,""
+encounter_id,string,True,False,None,""
+observation_id,string,True,False,None,""
+order_id,string,False,False,None,""
+category,observation_category,False,False,None,"- `social-history`: Social History
+- `vital-signs`: Vital Signs
+- `imaging`: Imaging
+- `laboratory`: Laboratory
+- `procedure`: Procedure
+- `survey`: Survey
+- `exam`: Exam
+- `therapy`: Therapy
+- `activity`: Activity
+
+[FHIR: Observation Category Codes](http://hl7.org/fhir/ValueSet/observation-category)"
+status,observation_status,False,False,None,"- `registered`: The existence of the observation is registered, but there is no result yet available.
+- `preliminary`: Preliminary
+- `final`: Final
+- `amended`: Amended
+- `corrected`: Corrected
+- `cancelled`: Cancelled
+- `entered-in-error`: Entered in Error
+- `unknown`: Unknown
+
+[FHIR: Observation Status](http://hl7.org/fhir/ValueSet/observation-status)"
+code,string,True,False,None,LOINC code preferred
+name,string,False,False,None,Observation name/description
+observation_date,datetime,True,False,None,Date/time of observation
+value,string,True,False,None,Texual representation of observation value
+type,observation_type,False,False,text,"- `numeric`: Numeric
+- `text`: Text"
+unit,string,False,False,None,"Unit of measure. Use of Unified Code for Units of Measure (UCUM) recommended.
+
+[UCUM Common](http://hl7.org/fhir/ValueSet/ucum-common)
+[UCUM All](http://hl7.org/fhir/ValueSet/ucum-units)"
+reference_range,string,False,False,None,""
+extra,json,False,False,None,"Additional data not included in the model, in JSON format"
+created_at,datetime,False,False,None,Timestamp when the record was initially created in the database.
+updated_at,datetime,True,False,CURRENT_TIMESTAMP(),Timestamp of last update
+deleted_at,datetime,False,False,None,Timestamp of when the record is deleted or inactivated

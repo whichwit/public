@@ -1,0 +1,191 @@
+field_name,data_type,not_null,unique,default,comment
+patient_id,string,True,False,None,""
+encounter_id,string,True,False,None,""
+order_id,string,True,False,None,""
+medadmin_id,string,True,False,None,""
+status,medadmin_status,False,False,None,"- `in-progress`: In Progress
+- `not-done`: Not Done
+- `on-hold`: On Hold
+- `completed`: Completed
+- `entered-in-error`: Entered in Error
+- `stopped`: Stopped
+- `unknown`: Unknown
+
+[FHIR: Medication Administration Status](http://hl7.org/fhir/ValueSet/medication-admin-status)"
+medadmin_date,datetime,True,False,None,Date/time of administration
+route,route,False,False,None,"[FHIR: Route codes](https://build.fhir.org/valueset-route-codes.html)
+
+- `284009009`: Route of administration values
+- `6064005`: Topical route
+- `10547007`: Otic route
+- `12130007`: Intra-articular route
+- `16857009`: Per vagina
+- `26643006`: Oral route
+- `34206005`: Subcutaneous route
+- `37161004`: Per rectum
+- `37737002`: Intraluminal route
+- `37839007`: Sublingual route
+- `38239002`: Intraperitoneal route
+- `45890007`: Transdermal route
+- `46713006`: Nasal route
+- `47625008`: Intravenous route
+- `54471007`: Buccal route
+- `54485002`: Ophthalmic route
+- `58100008`: Intra-arterial route
+- `60213007`: Intramedullary route
+- `62226000`: Intrauterine route
+- `72607000`: Intrathecal route
+- `78421000`: Intramuscular route
+- `90028008`: Urethral route
+- `127490009`: Gastrostomy route
+- `127491008`: Jejunostomy route
+- `127492001`: Nasogastric route
+- `372449004`: Dental use
+- `372450004`: Endocervical use
+- `372451000`: Endosinusial use
+- `372452007`: Endotracheopulmonary use
+- `372453002`: Extra-amniotic use
+- `372454008`: Gastroenteral use
+- `372457001`: Gingival use
+- `372458006`: Intraamniotic use
+- `372459003`: Intrabursal use
+- `372460008`: Intracardiac use
+- `372461007`: Intracavernous use
+- `372462000`: Intracervical route (qualifier value)
+- `372463005`: Intracoronary use
+- `372464004`: Intradermal use
+- `372465003`: Intradiscal use
+- `372466002`: Intralesional use
+- `372467006`: Intralymphatic use
+- `372468001`: Intraocular use
+- `372469009`: Intrapleural use
+- `372470005`: Intrasternal use
+- `372471009`: Intravesical use
+- `372472002`: Ocular route (qualifier value)
+- `372473007`: Oromucosal use
+- `372474001`: Periarticular use
+- `372475000`: Perineural use
+- `372476004`: Subconjunctival use
+- `404815008`: Transmucosal route (qualifier value)
+- `404818005`: Intratracheal route (qualifier value)
+- `404819002`: Intrabiliary route (qualifier value)
+- `404820008`: Epidural route (qualifier value)
+- `416174007`: Suborbital route (qualifier value)
+- `417070009`: Caudal route (qualifier value)
+- `417255000`: Intraosseous route (qualifier value)
+- `417950001`: Intrathoracic route (qualifier value)
+- `417985001`: Enteral route (qualifier value)
+- `417989007`: Intraductal route (qualifier value)
+- `418091004`: Intratympanic route (qualifier value)
+- `418114005`: Intravenous central route (qualifier value)
+- `418133000`: Intramyometrial route (qualifier value)
+- `418136008`: Gastro-intestinal stoma route (qualifier value)
+- `418162004`: Colostomy route (qualifier value)
+- `418204005`: Periurethral route (qualifier value)
+- `418287000`: Intracoronal route (qualifier value)
+- `418321004`: Retrobulbar route (qualifier value)
+- `418331006`: Intracartilaginous route (qualifier value)
+- `418401004`: Intravitreal route (qualifier value)
+- `418418000`: Intraspinal route (qualifier value)
+- `418441008`: Orogastric route (qualifier value)
+- `418511008`: Transurethral route (qualifier value)
+- `418586008`: Intratendinous route (qualifier value)
+- `418608002`: Intracorneal route (qualifier value)
+- `418664002`: Oropharyngeal route (qualifier value)
+- `418722009`: Peribulbar route (qualifier value)
+- `418730005`: Nasojejunal route (qualifier value)
+- `418743005`: Fistula route (qualifier value)
+- `418813001`: Surgical drain route (qualifier value)
+- `418821007`: Intracameral route (qualifier value)
+- `418851001`: Paracervical route (qualifier value)
+- `418877009`: Intrasynovial route (qualifier value)
+- `418887008`: Intraduodenal route (qualifier value)
+- `418892005`: Intracisternal route (qualifier value)
+- `418947002`: Intratesticular route (qualifier value)
+- `418987007`: Intracranial route (qualifier value)
+- `419021003`: Tumour cavity route
+- `419165009`: Paravertebral route (qualifier value)
+- `419231003`: Intrasinal route (qualifier value)
+- `419243002`: Transcervical route (qualifier value)
+- `419320008`: Subtendinous route (qualifier value)
+- `419396008`: Intraabdominal route (qualifier value)
+- `419601003`: Subgingival route (qualifier value)
+- `419631009`: Intraovarian route (qualifier value)
+- `419684008`: Ureteral route (qualifier value)
+- `419762003`: Peritendinous route (qualifier value)
+- `419778001`: Intrabronchial route (qualifier value)
+- `419810008`: Intraprostatic route (qualifier value)
+- `419874009`: Submucosal route (qualifier value)
+- `419894000`: Surgical cavity route (qualifier value)
+- `419954003`: Ileostomy route (qualifier value)
+- `419993007`: Intravenous peripheral route (qualifier value)
+- `420047004`: Periosteal route (qualifier value)
+- `420163009`: Esophagostomy route
+- `420168000`: Urostomy route (qualifier value)
+- `420185003`: Laryngeal route (qualifier value)
+- `420201002`: Intrapulmonary route (qualifier value)
+- `420204005`: Mucous fistula route (qualifier value)
+- `420218003`: Nasoduodenal route (qualifier value)
+- `420254004`: Body cavity route (qualifier value)
+- `420287000`: Intraventricular route - cardiac (qualifier value)
+- `420719007`: Intracerebroventricular route (qualifier value)
+- `428191002`: Percutaneous route (qualifier value)
+- `429817007`: Interstitial route (qualifier value)
+- `445752009`: Intraesophageal route (qualifier value)
+- `445754005`: Intragingival route (qualifier value)
+- `445755006`: Intravascular route (qualifier value)
+- `445756007`: Intradural route (qualifier value)
+- `445767008`: Intrameningeal route (qualifier value)
+- `445768003`: Intragastric route (qualifier value)
+- `445771006`: Intrapericardial route (qualifier value)
+- `445913005`: Intralingual route (qualifier value)
+- `445941009`: Intrahepatic route (qualifier value)
+- `446105004`: Conjunctival route (qualifier value)
+- `446407004`: Intraepicardial route (qualifier value)
+- `446435000`: Transendocardial route (qualifier value)
+- `446442000`: Transplacental route (qualifier value)
+- `446540005`: Intracerebral route (qualifier value)
+- `447026006`: Intraileal route (qualifier value)
+- `447052000`: Periodontal route (qualifier value)
+- `447080003`: Peridural route (qualifier value)
+- `447081004`: Lower respiratory tract route (qualifier value)
+- `447121004`: Intramammary route (qualifier value)
+- `447122006`: Intratumor route (qualifier value)
+- `447227007`: Transtympanic route (qualifier value)
+- `447229005`: Transtracheal route (qualifier value)
+- `447694001`: Respiratory tract route (qualifier value)
+- `447964005`: Digestive tract route (qualifier value)
+- `448077001`: Intraepidermal route (qualifier value)
+- `448491004`: Intrajejunal route (qualifier value)
+- `448492006`: Intracolonic route (qualifier value)
+- `448598008`: Cutaneous route (qualifier value)
+- `697971008`: Arteriovenous fistula route (qualifier value)
+- `711360002`: Intraneural route (qualifier value)
+- `711378007`: Intramural route (qualifier value)
+- `714743009`: Extracorporeal route (qualifier value)
+- `718329006`: Infiltration route (qualifier value)
+- `764723001`: Epilesional route (qualifier value)
+- `766790006`: Extracorporeal hemodialysis route (qualifier value)
+- `876824003`: Intradialytic route
+- `1078280005`: Intracatheter instillation route (qualifier value)
+- `1254769004`: Suprachoroidal route
+- `1259221004`: Intracorporus cavernosum route (qualifier value)
+- `1611000175109`: Sublesional route (qualifier value)
+- `58731000052100`: Intestinal route (qualifier value)
+- `58751000052109`: Intraglandular route (qualifier value)
+- `58761000052107`: Intracholangiopancreatic route
+- `58771000052103`: Intraportal route
+- `58811000052103`: Peritumoral route (qualifier value)
+- `58821000052106`: Posterior juxtascleral route (qualifier value)
+- `58831000052108`: Subretinal route (qualifier value)
+- `66621000052103`: Sublabial use"
+quantity,numeric,False,False,None,Quantity administered
+unit,string,False,False,None,"Unit of measure. Use of Unified Code for Units of Measure (UCUM) recommended.
+
+[UCUM Common](http://hl7.org/fhir/ValueSet/ucum-common)
+[UCUM All](http://hl7.org/fhir/ValueSet/ucum-units)"
+provider_id,string,False,False,None,""
+extra,json,False,False,None,"Additional data not included in the model, in JSON format"
+created_at,datetime,False,False,None,Timestamp when the record was initially created in the database.
+updated_at,datetime,True,False,CURRENT_TIMESTAMP(),Timestamp of last update
+deleted_at,datetime,False,False,None,Timestamp of when the record is deleted or inactivated

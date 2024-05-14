@@ -1,0 +1,37 @@
+field_name,data_type,not_null,unique,default,comment
+patient_id,string,True,False,None,""
+encounter_id,string,True,False,None,""
+diagnosis_id,string,True,False,None,""
+seq,int,False,False,1,First diagnosis of each category is the primary diagnosis for that category
+category,diagnosis_category,True,False,None,"- `problem`: Problem List Item
+- `admit`: Admitting Diagnosis
+- `active`: Active Diagnosis at discharge or during the encounter
+- `final`: Coded Diagnosis
+
+[FHIR: Condition Category](http://hl7.org/fhir/ValueSet/condition-category)
+[FHIR: Diagnosis type](http://hl7.org/fhir/ValueSet/ex-diagnosistype)"
+code,string,True,False,None,ICD-10-CM code
+description,string,False,False,None,ICD-10-CM description
+start_date,date,True,False,None,Start date of diagnosis
+end_date,date,False,False,None,End date of diagnosis
+status,diagnosis_status,True,False,None,"- `active`: Active
+- `recurrence`: Recurrence
+- `relapse`: Relapse
+- `inactive`: Inactive
+- `remission`: Remission
+- `resolved`: Resolved
+
+[FHIR: Diagnosis status](http://hl7.org/fhir/ValueSet/condition-clinical)"
+poa,poa,False,False,None,"Describe whether a condition is present when a patient is admitted to a healthcare facility.
+
+- `Y`: Diagnosis was present at time of inpatient admission.
+- `N`: Diagnosis was not present at time of inpatient admission.
+- `U`: Documentation insufficient to determine if the condition was present at the time of inpatient admission.
+- `W`: Clinically undetermined. Provider unable to clinically determine whether the condition was present at the time of inpatient admission.
+- `E`: Exempt. Diagnosis was not present at time of inpatient admission, but it is exempt from POA reporting.
+
+[FHIR: POA Indicator](http://terminology.hl7.org/ValueSet/POAIndicators)"
+extra,json,False,False,None,"Additional data not included in the model, in JSON format"
+created_at,datetime,False,False,None,Timestamp when the record was initially created in the database.
+updated_at,datetime,True,False,CURRENT_TIMESTAMP(),Timestamp of last update
+deleted_at,datetime,False,False,None,Timestamp of when the record is deleted or inactivated

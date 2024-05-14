@@ -1,0 +1,6 @@
+field_name,data_type,not_null,unique,default,comment
+location_id,string,True,False,None,""
+name,string,True,False,None,Display value to reference the location
+type,location_type,True,False,None,""
+parent_id,string,False,False,None,""
+extra,json,False,False,None,"Additional data not included in the model, in JSON format"

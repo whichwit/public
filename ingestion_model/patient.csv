@@ -1,0 +1,56 @@
+field_name,data_type,not_null,unique,default,comment
+patient_id,string,True,False,None,Unique identifier for the patient
+patient_identifier,string,False,False,None,"Patient identifier, such as MRN, SSN, or other identifier"
+family_name,string,False,False,None,Patient family name
+given_name,string,False,False,None,Multiple given names are separated by a space.
+sex,sex,True,False,unknown,"Patient's sex, may be different from sex at birth.
+
+- `male`: Male
+- `female`: Female
+- `other`: Other
+- `unknown`: Unknown
+
+[FHIR: Administrative Gender](http://hl7.org/fhir/ValueSet/administrative-gender)"
+gender,gender,False,False,(from sex),"Patient's gender identity.
+
+- `male`: Male gender identity
+- `female`: Female gender identity
+- `other`: Other/Non-binary identity
+- `declined`: Patient declined to respond
+- `unknown`: Unknown
+
+[HL7 Terminology: Gender Identity](http://terminology.hl7.org/ValueSet/gender-identity)"
+pronouns,pronouns,False,False,unknown,"Pronouns to be used when communicating with or about an individual.
+
+- `LA29518-0`: he/him/his/his/himself
+- `LA29519-8`: she/her/her/hers/herself
+- `LA29520-6`: they/them/their/theirs/themselves
+- `other`: Other
+- `unknown`: Unknown
+
+[HL7 Terminology: Personal Pronouns](http://terminology.hl7.org/ValueSet/pronouns)"
+race,race,False,False,None,"- `1002-5`: American Indian or Alaska Native
+- `2054-5`: Black or African American
+- `2076-8`: Native Hawaiian or Other Pacific Islander
+- `2106-3`: White
+- `2028-9`: Asian
+- `2131-1`: Other Race
+
+[FHIR: Race](https://terminology.hl7.org/ValueSet-v3-Race.html)"
+ethnicity,ethnicity,False,False,None,"- `2186-5`: Not Hispanic or Latino
+- `2135-2`: Hispanic or Latino
+- `declined`: Patient declined to respond
+- `unknown`: Unknown
+
+[FHIR: Ethnicity](http://terminology.hl7.org/ValueSet/v3-Ethnicity)"
+birth_date,date,True,False,None,Date of birth
+phone,string,False,False,None,Primary phone number of the patient
+email,string,False,False,None,Primary email address of the patient
+state_of_residence,string,False,False,None,State of residence
+postal_code,string,False,False,None,Zip code of residence
+primary_care_provider_id,string,False,False,None,""
+ssn,string,False,False,None,Social Security Number. Numbers only.
+extra,json,False,False,None,"Additional data not included in the model, in JSON format"
+created_at,datetime,False,False,None,Timestamp when the record was initially created in the database.
+updated_at,datetime,True,False,CURRENT_TIMESTAMP(),Timestamp of last update
+deleted_at,datetime,False,False,None,Timestamp of when the record is deleted or inactivated

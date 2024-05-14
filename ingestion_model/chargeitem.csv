@@ -1,0 +1,28 @@
+field_name,data_type,not_null,unique,default,comment
+patient_id,string,True,False,None,""
+encounter_id,string,True,False,None,""
+chargeitem_id,string,True,False,None,""
+code,user_defined,True,False,None,Charge code
+description,string,False,False,None,Charge description
+entry_date,datetime,False,False,None,Date the charge item was entered
+service_date,datetime,True,False,None,Date the service was provided
+quantity,numeric,True,False,None,Quantity of charge item
+unit_cost,numeric,False,False,None,Unit cost of charge item
+total_cost,numeric,False,False,None,Total cost of charge item
+status,chargeitem_status,True,False,None,"- `planned`: Planned
+- `billable`: Billable
+- `not-billable`: Not Billable
+- `aborted`: Aborted
+- `billed`: Billed
+- `entered-in-error`: Entered in Error
+- `unknown`: Unknown"
+transaction_type,chargeitem_transaction_type,True,False,charge,"- `charge`: Charge
+- `credit`: Credit"
+chargeitem_provider_id,string,False,False,None,Provider associated with the charge item
+service,string,False,False,None,Service provided
+bodysite,string,False,False,None,"Anatomical location, if relevant"
+revenue_location,string,False,False,None,"Revenue location, if relevant"
+extra,json,False,False,None,"Additional data not included in the model, in JSON format"
+created_at,datetime,False,False,None,Timestamp when the record was initially created in the database.
+updated_at,datetime,True,False,CURRENT_TIMESTAMP(),Timestamp of last update
+deleted_at,datetime,False,False,None,Timestamp of when the record is deleted or inactivated

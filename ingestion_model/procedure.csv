@@ -1,0 +1,27 @@
+field_name,data_type,not_null,unique,default,comment
+patient_id,string,True,False,None,""
+encounter_id,string,True,False,None,""
+order_id,string,False,False,None,""
+procedure_id,string,True,False,None,""
+category,procedure_category,False,False,encounter,"- `encounter`: Procedure prformed during the encounter
+- `final`: Coded, final procedure"
+seq,int,False,False,1,First procedure is the primary procedure
+code,string,True,False,None,ICD-10-PCS or SNOMED-CT
+code_type,procedure_code_type,True,False,None,""
+description,string,False,False,None,""
+procedure_date,datetime,False,False,None,Date/time of procedure
+procedure_provider_id,string,False,False,None,""
+status,procedure_status,True,False,None,"- `preparation`: Preparation
+- `in-progress`: In Progress
+- `not-done`: Not Done
+- `on-hold`: On Hold
+- `stopped`: Stopped
+- `completed`: Completed
+- `entered-in-error`: Entered in Error
+- `unknown`: Unknown
+
+[FHIR: Event status](http://hl7.org/fhir/ValueSet/event-status)"
+extra,json,False,False,None,"Additional data not included in the model, in JSON format"
+created_at,datetime,False,False,None,Timestamp when the record was initially created in the database.
+updated_at,datetime,True,False,CURRENT_TIMESTAMP(),Timestamp of last update
+deleted_at,datetime,False,False,None,Timestamp of when the record is deleted or inactivated

@@ -1,0 +1,8 @@
+field_name,data_type,not_null,unique,default,comment
+practitioner_id,string,True,False,None,""
+name,string,True,False,None,Display value to reference the practitioner
+npi,numeric,False,False,None,National Provider Identifier
+phone,string,False,False,None,Primary phone number of the practitioner
+email,string,False,False,None,Primary email address of the practitioner
+specialty,string,False,False,None,Specialty of the practitioner
+extra,json,False,False,None,"Additional data not included in the model, in JSON format"
