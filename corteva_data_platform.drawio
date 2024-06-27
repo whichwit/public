@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-26T12:05:43.457Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="0ueVx1IQROT2CkZdf7dh" version="24.6.3" type="device">
+<mxfile host="app.diagrams.net" modified="2024-06-27T15:53:49.602Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0" etag="ywqewNz_MZdWBiMziHpT" version="24.6.3" type="github" pages="2">
   <diagram name="Page-1" id="W0coKdOubhpi5GPjbxpj">
     <mxGraphModel dx="1314" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -57,6 +57,58 @@
         </mxCell>
         <mxCell id="jPCkQiEUjlUwYEobX-Ye-21" value="Analytics" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
           <mxGeometry x="83" y="328" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="RFZezUYWFRtOVkbnVsQA" name="Page-2">
+    <mxGraphModel dx="1386" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YR3-Y-devTy_o625TfkS-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YR3-Y-devTy_o625TfkS-1" target="YR3-Y-devTy_o625TfkS-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-1" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.user;" vertex="1" parent="1">
+          <mxGeometry x="41" y="80" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-3" value="Dagster" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="161" y="250" width="540" height="280" as="geometry">
+            <mxRectangle x="510" y="80" width="80" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="YR3-Y-devTy_o625TfkS-3" source="YR3-Y-devTy_o625TfkS-6" target="YR3-Y-devTy_o625TfkS-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="YR3-Y-devTy_o625TfkS-3" source="YR3-Y-devTy_o625TfkS-6" target="YR3-Y-devTy_o625TfkS-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-6" value="S3 sensor" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="YR3-Y-devTy_o625TfkS-3">
+          <mxGeometry x="220" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-7" value="Process flat data file" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="YR3-Y-devTy_o625TfkS-3">
+          <mxGeometry x="400" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-9" value="Handle Excel file" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="YR3-Y-devTy_o625TfkS-3">
+          <mxGeometry x="20" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-4" value="Minio" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="361" y="30" width="700" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-2" value="s3://intake" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket;points=[[0,0.5,0,0,0],[0.5,1,0,0,64]];" vertex="1" parent="YR3-Y-devTy_o625TfkS-4">
+          <mxGeometry x="42.5" y="46" width="75" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-5" value="s3://raw" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket_with_objects;" vertex="1" parent="YR3-Y-devTy_o625TfkS-4">
+          <mxGeometry x="222.5" y="46" width="75" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YR3-Y-devTy_o625TfkS-2" target="YR3-Y-devTy_o625TfkS-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-12" value="Excel -&amp;gt; Flat File" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="YR3-Y-devTy_o625TfkS-9" target="YR3-Y-devTy_o625TfkS-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YR3-Y-devTy_o625TfkS-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YR3-Y-devTy_o625TfkS-7" target="YR3-Y-devTy_o625TfkS-5">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
