@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-27T17:34:48.587Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0" etag="34epFLqFndKJIhf1hOaq" version="24.6.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2024-06-27T17:37:31.161Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0" etag="4i6dgu-poCiU_h3UWIh8" version="24.6.3" type="github" pages="2">
   <diagram name="Page-1" id="W0coKdOubhpi5GPjbxpj">
     <mxGraphModel dx="1314" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -130,7 +130,7 @@
           <mxGeometry x="449.5" y="46" width="75" height="78" as="geometry" />
         </mxCell>
         <mxCell id="YR3-Y-devTy_o625TfkS-26" value="s3://curated" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket_with_objects;points=[[0,0.5,0,0,0]];" vertex="1" parent="YR3-Y-devTy_o625TfkS-4">
-          <mxGeometry x="654.5999999999999" y="46" width="75" height="78" as="geometry" />
+          <mxGeometry x="719.3" y="46" width="75" height="78" as="geometry" />
         </mxCell>
         <mxCell id="YR3-Y-devTy_o625TfkS-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YR3-Y-devTy_o625TfkS-2" target="YR3-Y-devTy_o625TfkS-6">
           <mxGeometry relative="1" as="geometry" />
